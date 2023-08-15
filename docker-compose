@@ -1,17 +1,16 @@
 version: "3.8"
 services:
-    app-backend:
-        build: ./server/
-        image: app_backend
-        container_name: backend
+    textsearch-backend:
+        build: ./API/
+        image: textsearch-api
+        container_name: TextSearch-API
         restart: always
         ports:
-            - 8082:8082app-frontend:
-        build: ./GUI/
-        image: macroplan
-        container_name: frontend
+            - 8082:8082
+    textsearch-frontend:
+        build: ./UI/
+        image: textsearch-ui
+        container_name: TextSearch-UI
         restart: always
         ports:
-            - 4200:4200
-        expose:
-            - "4200"
+            - 8081:4200
