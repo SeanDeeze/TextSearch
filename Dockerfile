@@ -5,11 +5,11 @@ FROM node:latest AS angular-build
     RUN npm install -g npm@latest
 
     # Copy package.json and install required npm files
-    COPY ./package.json /source/package.json
+    COPY ./UI/package.json /source/package.json
     RUN npm install
 
     # Copy everything and compile application
-    COPY ./. /source/
+    COPY ./UI/. /source/
     RUN npm run-script compile
 
 FROM python:3.7-slim
