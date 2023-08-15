@@ -1,11 +1,7 @@
 from flask import Flask,render_template # Add render_template
 import os.path
 
-app = Flask(__name__, template_folder='template')
-
-@app.route('/', methods=['GET'])
-def root():
-    return render_template('index.html') # Return index.html 
+app = Flask(__name__)
 
 # Serving static files
 @app.route('/', defaults={'path': ''})
