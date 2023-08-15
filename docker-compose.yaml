@@ -1,16 +1,9 @@
 version: "3.8"
 services:
-    textsearch-backend:
-        build: ./API/
-        image: textsearch-api
-        container_name: TextSearch-API
+    textsearch:
+        build: ./
+        image: textsearch
+        container_name: TextSearch
         restart: always
         ports:
-            - 8082:8082
-    textsearch-frontend:
-        build: ./UI/
-        image: textsearch-ui
-        container_name: TextSearch-UI
-        restart: always
-        ports:
-            - 8081:4200
+            - 5000:5000
