@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory, request # Add render_template
+from flask import Flask, send_from_directory, request, jsonify # Add render_template
 import os.path
 
 app = Flask(__name__)
@@ -9,7 +9,6 @@ app = Flask(__name__)
 @app.route('/<path:path>')
 def static_proxy(path):
     if "index.html" not in request.path:
-    # if os.path.isfile('public/' + pathrequest.path):
         # If request is made for a file by angular for example main.js
         # condition will be true, file will be served from the public directory
         print("Not index.html - path: " + request.path)
@@ -18,6 +17,14 @@ def static_proxy(path):
         # Otherwise index.html will be served,
         # angular router will handle the rest
         return app.send_static_file("index.html")
+
+incomes = [
+    { 'description': 'salary', 'amount': 5000 }
+]
+
+@app.route('/search')
+def get_incomes():
+    return jsonify(incomes)
 
 if __name__=="__main__":
     app.run()
