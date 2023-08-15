@@ -17,5 +17,11 @@ FROM python:3.7-slim
     COPY --from=angular-build /source/dist/ui/. /home/api/static/
     COPY --from=angular-build /source/src/index.html /home/api/template/
 
+    WORKDIR /home/api/static/
+    RUN ls
+
+    WORKDIR /home/api/template/
+    RUN ls
+
     WORKDIR /home/api
     ENV PYTHONUNBUFFERED 1RUN pip3 install -r /code/requirements.txtCMD ["python","flask-api.py"]
