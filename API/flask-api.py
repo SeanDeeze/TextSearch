@@ -8,7 +8,7 @@ def root():
 
 @app.route('/home', methods=['GET'])
 def root():
-    return render_template('index.html') # Return index.html 
+    return render_template('/home/api/static/index.html') # Return index.html 
 
 if __name__=="__main__":
     app.run()
