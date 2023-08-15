@@ -21,7 +21,7 @@ FROM python:3.7-slim
     RUN ls
     WORKDIR /home/api/static/
     RUN ls
-    WORKDIR /home/api/static/
+    WORKDIR /home/api
     RUN ls
 
     WORKDIR /home/api
