@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory # Add render_template
+from flask import Flask, send_from_directory, request # Add render_template
 import os.path
 
 app = Flask(__name__)
@@ -8,7 +8,8 @@ app = Flask(__name__)
 @app.route('/<string:path>')
 @app.route('/<path:path>')
 def static_proxy(path):
-    if os.path.isfile('public/' + path):
+    if "index.html" not in request.path:
+    # if os.path.isfile('public/' + path):
         # If request is made for a file by angular for example main.js
         # condition will be true, file will be served from the public directory
         return send_from_directory('public', path)
