@@ -12,7 +12,7 @@ FROM node:latest AS angular-build
     COPY ./UI/. /source/
     RUN npm run-script compile
 
-FROM python:3.7-slim
+FROM python:3.11-slim
     COPY ./API/. /home/api
     COPY --from=angular-build /source/dist/ui/. /home/api/static/
     COPY --from=angular-build /source/src/index.html /home/api/template/
