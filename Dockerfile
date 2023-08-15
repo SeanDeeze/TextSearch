@@ -13,10 +13,11 @@ FROM node:latest AS angular-build
     RUN npm run-script compile
 
 FROM python:3.11-slim
+    
     COPY ./API/. /home/api
-    # COPY --from=angular-build /source/dist/ui/. /home/api/static/
-    # COPY --from=angular-build /source/dist/ui/index.html /home/api/template/
-    COPY --from=angular-build /source/dist/ui/. /home/api/template/
+    COPY --from=angular-build /source/dist/ui/. /home/api/public/
+    
+     # COPY --from=angular-build /source/dist/ui/index.html /home/api/template/
 
     WORKDIR /home/api/template/
     RUN ls
