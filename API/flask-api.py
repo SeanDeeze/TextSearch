@@ -6,9 +6,5 @@ app = Flask(__name__)
 def root():
     return render_template('./template/index.html') # Return index.html 
 
-@app.route('/home', methods=['GET'])
-def root():
-    return render_template('/home/api/static/index.html') # Return index.html 
-
 if __name__=="__main__":
     app.run()
