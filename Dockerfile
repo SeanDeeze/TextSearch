@@ -25,4 +25,4 @@ FROM python:3.7-slim
     RUN ls
 
     WORKDIR /home/api
-    ENV PYTHONUNBUFFERED 1RUN pip3 install -r /code/requirements.txtCMD ["python","flask-api.py"]
+    ENV PYTHONUNBUFFERED 1RUN pip3 install -r /code/requirements.txt CMD ["python","flask-api.py"]
