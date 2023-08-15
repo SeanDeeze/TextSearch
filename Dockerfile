@@ -27,4 +27,5 @@ FROM python:3.11-slim
     WORKDIR /home/api
     ENV PYTHONUNBUFFERED 1
     RUN pip3 install -r /home/api/requirements.txt 
-    CMD ["python","flask-api.py"]
+    # CMD ["python","flask-api.py"]
+    CMD ["flask", "run", "--host=0.0.0.0"]
