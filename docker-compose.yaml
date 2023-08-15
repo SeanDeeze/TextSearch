@@ -2,7 +2,7 @@ version: "3.8"
 services:
     textsearch:
         build: ./
-        image: textsearch
+        image: sdeeze/textsearch
         container_name: TextSearch
         restart: always
         ports:
