@@ -1,9 +1,11 @@
-from flask import Flask, send_from_directory, request, jsonify # Add render_template
+from flask import Flask, send_from_directory, request, jsonify  # Add render_template
 import os.path
 
 app = Flask(__name__)
 
 # Serving static files
+
+
 @app.route('/', defaults={'path': ''})
 @app.route('/<string:path>')
 @app.route('/<path:path>')
@@ -18,13 +20,17 @@ def static_proxy(path):
         # angular router will handle the rest
         return app.send_static_file("index.html")
 
-incomes = [
-    { 'description': 'salary', 'amount': 5000 }
+
+books = [
+    {{'title': 'Little Women', id: 1}, {'title': 'The Wonderful Wizard of Oz', id: 2},
+        {'title': 'Pride and Prejudice', id: 3}}
 ]
 
-@app.route('/search')
-def get_incomes():
-    return jsonify(incomes)
 
-if __name__=="__main__":
+@app.route('/books', methods=['GET'])
+def get_incomes():
+    return jsonify(books)
+
+
+if __name__ == "__main__":
     app.run()
