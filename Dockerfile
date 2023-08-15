@@ -16,6 +16,7 @@ FROM python:3.11-slim
     
     COPY ./API/. /home/api
     COPY --from=angular-build /source/dist/ui/. /home/api/public/
+    COPY --from=angular-build /source/dist/ui/index.html /home/api/static/
 
     WORKDIR /home/api/template/
     RUN ls
