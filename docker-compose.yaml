@@ -6,4 +6,4 @@ services:
         container_name: TextSearch
         restart: always
         ports:
-            - 5000:5000
+            - 5005:5000
