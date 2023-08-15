@@ -12,7 +12,7 @@ def static_proxy(path):
     # if os.path.isfile('public/' + pathrequest.path):
         # If request is made for a file by angular for example main.js
         # condition will be true, file will be served from the public directory
-        print("Not index.html - path: " + )
+        print("Not index.html - path: " + request.path)
         return send_from_directory('public', path)
     else:
         # Otherwise index.html will be served,
