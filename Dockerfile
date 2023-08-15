@@ -19,6 +19,8 @@ FROM python:3.7-slim
 
     WORKDIR /home/api/static/
     RUN ls
+    WORKDIR /home/api/static/
+    RUN ls
 
     WORKDIR /home/api/template/
     RUN ls
