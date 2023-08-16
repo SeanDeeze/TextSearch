@@ -16,7 +16,6 @@ FROM python:3.11-slim AS python-host
 
 COPY ./API/. /home/api
 COPY --from=angular-build /source/dist/ui/. /home/api/public/
-COPY --from=angular-build /source/dist/ui/index.html /home/api/static/
 
 WORKDIR /home/api
 ENV PYTHONUNBUFFERED 1
