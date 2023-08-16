@@ -16,10 +16,6 @@ def static_proxy(path):
         # condition will be true, file will be served from the public directory
         print("Not index.html - path: " + request.path + '\n')
         return send_from_directory('public', path)
-    else:
-        # Otherwise index.html will be served,
-        # angular router will handle the rest
-        return app.send_static_file("index.html")
 
 
 books = [
