@@ -22,8 +22,8 @@ def static_proxy(path):
 
 
 books = [
-    {{'title': 'Little Women', id: 1}, {'title': 'The Wonderful Wizard of Oz', id: 2},
-        {'title': 'Pride and Prejudice', id: 3}}
+    {'title': 'Little Women', id: 1}, {'title': 'The Wonderful Wizard of Oz', id: 2},
+        {'title': 'Pride and Prejudice', id: 3}
 ]
 
 
