@@ -10,10 +10,11 @@ app = Flask(__name__)
 @app.route('/<string:path>')
 @app.route('/<path:path>')
 def static_proxy(path):
-    if "index.html" not in request.path:
+    # if "index.html" not in request.path:
+    if os.path.isfile('public/' + path):
         # If request is made for a file by angular for example main.js
         # condition will be true, file will be served from the public directory
-        print("Not index.html - path: " + request.path)
+        print("Not index.html - path: " + request.path + '\n')
         return send_from_directory('public', path)
     else:
         # Otherwise index.html will be served,
@@ -22,8 +23,9 @@ def static_proxy(path):
 
 
 books = [
-    {'title': 'Little Women', id: 1}, {'title': 'The Wonderful Wizard of Oz', id: 2},
-        {'title': 'Pride and Prejudice', id: 3}
+    {'title': 'Little Women', id: 1}, {
+        'title': 'The Wonderful Wizard of Oz', id: 2},
+    {'title': 'Pride and Prejudice', id: 3}
 ]
 
 
