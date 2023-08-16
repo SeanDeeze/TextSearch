@@ -18,6 +18,8 @@ export class AppComponent implements OnInit
 
   ngOnInit()
   {
-    // this.router.navigateByUrl('/app-search-text');
+    const routeLocation: string = '/app-search-text';
+    console.log(`Routing Application: ${routeLocation}`);
+    this.router.navigateByUrl(routeLocation);
   }
 }
