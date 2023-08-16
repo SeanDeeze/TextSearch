@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Book } from 'src/models/Book';
 import { SearchTextService } from 'src/services/search-text.service';
 import { SelectItem } from 'primeng/api';
@@ -8,10 +8,21 @@ import { SelectItem } from 'primeng/api';
   templateUrl: './search-text.component.html',
   styleUrls: ['./search-text.component.css']
 })
-export class SearchTextComponent
+export class SearchTextComponent implements OnInit
 {
   public books: SelectItem[] = [];
-  public selectedBook: SelectItem = { label: 'Wizard of Oz', value: 3 } as SelectItem;
+  selectedBook: Book;
 
-  constructor(_searchTextService: SearchTextService) { }
+  constructor(private searchTextService: SearchTextService) { }
+
+  ngOnInit(): void
+  {
+    this.searchTextService.getBooks().subscribe((response: Book[]) =>
+    {
+      this.books = response.map((book: Book) =>
+      {
+        return { label: book.title, value: book } as SelectItem;
+      })
+    });
+  }
 }

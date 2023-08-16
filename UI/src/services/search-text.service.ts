@@ -1,9 +1,19 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+
+import { Book } from 'src/models/Book';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SearchTextService {
+export class SearchTextService
+{
+  configUrl = 'api/Books';
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getBooks()
+  {
+    return this.http.get<Book[]>(this.configUrl);
+  }
 }

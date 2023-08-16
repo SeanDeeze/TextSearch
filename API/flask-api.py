@@ -25,7 +25,7 @@ books = [
 ]
 
 
-@app.route('/books', methods=['GET'])
+@app.route('/api/books', methods=['GET'])
 def get_incomes():
     return jsonify(books)
 
