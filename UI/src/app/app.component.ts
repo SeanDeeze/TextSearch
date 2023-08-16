@@ -18,6 +18,6 @@ export class AppComponent implements OnInit
 
   ngOnInit()
   {
-    this.router.navigateByUrl('/app-search-text');
+    //this.router.navigateByUrl('/app-search-text');
   }
 }
