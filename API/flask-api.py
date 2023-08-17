@@ -11,7 +11,7 @@ books = [
 ]
 
 
-@app.route('/books', methods=['GET'])
+@app.route('/api/books', methods=['GET'])
 def getBooks():
     return jsonify(books)
 
