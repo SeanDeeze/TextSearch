@@ -10,8 +10,9 @@ import { SelectItem } from 'primeng/api';
 })
 export class SearchTextComponent implements OnInit
 {
-  public books: SelectItem[] = [];
+  books: SelectItem[] = [];
   selectedBook: Book;
+  searchText: string;
 
   constructor(private searchTextService: SearchTextService) { }
 

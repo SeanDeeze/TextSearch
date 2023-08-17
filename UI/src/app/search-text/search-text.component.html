@@ -1,3 +1,9 @@
 <h2>Search Page!</h2>
 
 <p-dropdown [options]="books" [(ngModel)]="selectedBook" placeholder="Select a Book!"></p-dropdown>
+<br />
+<input type="text" pInputText [(ngModel)]="searchText" id="searchText" />
+<label htmlFor="searchText">Search Text</label>
+<br /><br />
+<button pButton pRipple label="Search!" class="p-button-success"></button>
+<button pButton pRipple label="Reset" class="p-button-danger"></button>
