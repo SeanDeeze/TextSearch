@@ -5,18 +5,15 @@ import os.path
 app = Flask(__name__)
 
 books = [
-    {'title': 'Little Women', id: 1},
-    {'title': 'The Wonderful Wizard of Oz', id: 2},
-    {'title': 'Pride and Prejudice', id: 3}
+    {'title': 'Little Women', 'id': 1},
+    {'title': 'The Wonderful Wizard of Oz', 'id': 2},
+    {'title': 'Pride and Prejudice', 'id': 3}
 ]
 
 
 @app.route('/books', methods=['GET'])
 def getBooks():
-    print('Books Endpoint!\n')
-    print(jsonify(books))
-    # return "Hello World!!!"
-    return books
+    return jsonify(books)
 
 # Handle Angular Routing
 
