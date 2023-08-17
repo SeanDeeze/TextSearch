@@ -8,7 +8,7 @@ import { Book } from 'src/models/Book';
 })
 export class SearchTextService
 {
-  configUrl = 'api/Books';
+  configUrl = 'api/books';
 
   constructor(private http: HttpClient) { }
 
