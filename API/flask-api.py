@@ -16,7 +16,7 @@ def getBooks():
     print('Books Endpoint!\n')
     print(jsonify(books))
     # return "Hello World!!!"
-    return json.dump(books)
+    return books
 
 # Handle Angular Routing
 
