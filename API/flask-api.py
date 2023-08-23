@@ -1,4 +1,4 @@
-# Add render_template
+import ctypes
 from flask import Flask, send_from_directory,  request, jsonify, Response, json
 import os.path
 
@@ -35,5 +35,20 @@ def static_proxy(path):
         return send_from_directory('public', 'index.html')
 
 
+def search_str(book, searchTerm) -> ctypes.Array:
+    with open('../books/' + book, 'r') as file:
+        lines = file.readlines()
+
+    matching_lines = []
+
+    for line in lines:
+        # check if string present on a current line
+        if line.find(searchTerm) != -1:
+            print(searchTerm, 'string exists in file')
+            print('Line Number:', lines.index(line))
+            print('Line:', line)
+            matching_lines.append(line)
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=False)
